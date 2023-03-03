@@ -4,21 +4,12 @@
     font-size: 65px;
 }
 
-.grid {
+.gridContainer {
     display: grid;
-    grid-template-rows: 16px 16px 16px 16px 16px 16px 16px 16px 16px 16px 16px 16px;
-    grid-template-columns: 16px 16px 16px 16px 16px 16px 16px 16px 16px 16px 16px 16px;
-    width: 500px;
+    grid-template-rows: repeats (16, 1fr);
+    grid-template-columns: repeats (16, 1fr);
     height: 500px;
-    margin: 100px 691.500px 100px 691.500px;
+    width: 500px;
+    margin: auto;
     border: solid;
-}
-
-.gridDiv {
-    border: 5px;
-    background-color: blue;
-    grid-column-start: 1;
-    grid-column-end: 1;
-    grid-row-start: 1;
-    grid-row-end: 1;
 }
