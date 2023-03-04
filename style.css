@@ -5,11 +5,12 @@
 }
 
 .gridContainer {
-    display: grid;
-    grid-template-rows: repeats (16, 1fr);
-    grid-template-columns: repeats (16, 1fr);
     height: 500px;
     width: 500px;
     margin: auto;
     border: solid;
+}
+
+.gridDiv:hover {
+    background-color: black;
 }
