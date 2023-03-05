@@ -21,7 +21,7 @@ function addDivs (size) {
     for (let i = 0; i < totalPixels; i++) {
         let gridDiv = document.createElement('div');
         gridDiv.addEventListener('mouseover', function () {
-            gridDiv.style.backgroundColor = 'black';  
+            gridDiv.style.backgroundColor = generateColor();  
         });
         gridContainer.appendChild(gridDiv);
     }
@@ -35,4 +35,12 @@ function createGrid () {
         alert('You need to select a number between 2 and 100, try again');
         createGrid();
     }
+}
+
+function generateColor () {
+    let red = Math.floor(Math.random() * 256);
+    let green = Math.floor(Math.random() * 256);
+    let blue = Math.floor(Math.random() * 256);
+    let color = `rgb(${red}, ${green}, ${blue})`;
+    return color; 
 }
