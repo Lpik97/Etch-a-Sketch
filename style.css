@@ -4,6 +4,11 @@
     font-size: 65px;
 }
 
+.askingButton {
+    font: 700 Verdana;
+    font-size: 20px;
+}
+
 .gridContainer {
     display: grid;
     height: 500px;
