@@ -27,8 +27,15 @@ blackButton.innerText = 'BLACK';
 blackButton.addEventListener('click', enableBlackMode);
 buttonContainer.appendChild(blackButton);
 
+const eraseButton = document.createElement ('button');
+eraseButton.className = 'eraseButton';
+eraseButton.innerText = 'ERASE';
+eraseButton.addEventListener('click', enableEraseMode);
+buttonContainer.appendChild(eraseButton);
+
 let colorMode = false;
 let blackMode = false;
+let eraseMode = false;
 
 function addDivs (size) {
     const totalPixels = (size * size); 
@@ -43,7 +50,9 @@ function addDivs (size) {
                 gridDiv.style.backgroundColor = generateColor();
             } else if (blackMode) {
                 gridDiv.style.backgroundColor = 'black';
-            }  
+            } else if (eraseMode) {
+                gridDiv.style.backgroundColor = 'white';
+            }
         });
         gridContainer.appendChild(gridDiv);
     }
@@ -71,9 +80,17 @@ function generateColor () {
 function enableColorMode () {
     colorMode = true;
     blackMode = false;
+    eraseMode = false;
 }
 
 function enableBlackMode () {
     colorMode = false;
     blackMode = true;
+    eraseMode = false;
+}
+
+function enableEraseMode () {
+    colorMode = false;
+    blackMode = false;
+    eraseMode = true;
 }
