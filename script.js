@@ -18,14 +18,17 @@ buttonContainer.appendChild(askingButton);
 const colorButton = document.createElement ('button');
 colorButton.className = 'colorButton';
 colorButton.innerText = 'RANDOM COLOR';
-colorButton.addEventListener('click', generateColor);
+colorButton.addEventListener('click', enableColorMode);
 buttonContainer.appendChild(colorButton);
 
 const blackButton = document.createElement ('button');
 blackButton.className = 'blackButton';
 blackButton.innerText = 'BLACK';
-blackButton.addEventListener('click', generateColor);
+blackButton.addEventListener('click', enableBlackMode);
 buttonContainer.appendChild(blackButton);
+
+let colorMode = false;
+let blackMode = false;
 
 function addDivs (size) {
     const totalPixels = (size * size); 
@@ -36,8 +39,11 @@ function addDivs (size) {
     for (let i = 0; i < totalPixels; i++) {
         let gridDiv = document.createElement('div');
         gridDiv.addEventListener('mouseover', function () {
-            if ()
-            gridDiv.style.backgroundColor = generateColor();  
+            if (colorMode) {
+                gridDiv.style.backgroundColor = generateColor();
+            } else if (blackMode) {
+                gridDiv.style.backgroundColor = 'black';
+            }  
         });
         gridContainer.appendChild(gridDiv);
     }
@@ -62,3 +68,12 @@ function generateColor () {
     return color;
 }
 
+function enableColorMode () {
+    colorMode = true;
+    blackMode = false;
+}
+
+function enableBlackMode () {
+    colorMode = false;
+    blackMode = true;
+}
