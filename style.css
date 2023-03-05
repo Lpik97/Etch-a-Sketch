@@ -9,6 +9,26 @@
     font-size: 20px;
 }
 
+.colorButton {
+    font: 700 Verdana;
+    font-size: 20px;
+    color: red;
+}
+
+.blackButton {
+    font: 700 Verdana;
+    font-size: 20px;
+    color: black;
+}
+
+.buttonContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 10px;
+}
+
 .gridContainer {
     display: grid;
     height: 500px;
