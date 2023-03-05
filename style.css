@@ -21,6 +21,12 @@
     color: black;
 }
 
+.eraseButton {
+    font: 700 Verdana;
+    font-size: 20px;
+    color: black;
+}
+
 .buttonContainer {
     display: flex;
     align-items: center;
